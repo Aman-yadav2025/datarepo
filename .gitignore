@@ -1,0 +1,11 @@
+# Security (Keeps your passwords safe)
+.env
+
+# Virtual Environments (Saves you from uploading thousands of unnecessary files)
+.venv/
+venv/
+env/
+
+# Python Cache (Keeps your GitHub repo clean)
+__pycache__/
+*.pyc
