@@ -1,6 +1,6 @@
 # Security (Keeps your passwords safe)
 .env
-
+uv.lock
 # Virtual Environments (Saves you from uploading thousands of unnecessary files)
 .venv/
 venv/
