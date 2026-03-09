@@ -6,3 +6,17 @@ class Blog(BaseModel):
     body:str
     published:Optional[bool] = None
 
+class ShowModel(Blog):
+    class Config():
+        orm_mode = True
+
+class User(BaseModel):
+    name:str
+    email:str
+    password:str
+
+class ShowUser(BaseModel):
+    name:str
+    email: str
+    class Config():
+        orm_mode= True
