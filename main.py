@@ -18,7 +18,7 @@ def get_db():
 
 @app.get('/')
 def index():
-    return {'data':'fuck you'}
+    return {'data':'indo'}
 
 @app.get('/about/static')
 def stats():
@@ -84,7 +84,7 @@ def update(id: int , request: schemas.Blog, db: Session = Depends(get_db)):
     if not blog.first():
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"fuck you blog {id} isn't there"
+            detail=f"blog with id {id} isn't acai"
         )
     blog.update(request.dict(), synchronize_session=False)
     db.commit()
