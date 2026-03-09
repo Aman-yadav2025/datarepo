@@ -84,9 +84,9 @@ def update(id: int , request: schemas.Blog, db: Session = Depends(get_db)):
     if not blog.first():
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"blog with id {id} isn't acai"
+            detail=f"blog with id {id} doesnot exists"
         )
-    blog.update(request.dict(), synchronize_session=False)
+    blog.update(request.dict(exclude={'published'}), synchronize_session=False)
     db.commit()
     
     return {'response':"updated"}
