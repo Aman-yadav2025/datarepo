@@ -1,0 +1,22 @@
+#define version
+
+version: '3.8'
+
+#define service
+
+services:
+  #make database container
+  db:
+    image: postgres:15 #define server
+    environment: #define environment
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password@123
+      POSTGRES_DB: bankdb
+    ports: #define ports
+      - "5432:5432"
+  web: #build fastapi app
+    build: . #build using Dockerfile
+    ports: 
+      - "8000:8000"
+    depends_on:
+      - db #wait for db to intiate
